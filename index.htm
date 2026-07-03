@@ -1,255 +1,123 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Pintores en Madrid | Pinturas Florin</title>
-    <meta name="description" content="Pintores profesionales en Madrid. Pintura de interiores, alisado de paredes y tarima. Presupuesto gratis por WhatsApp.">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Pintores en Madrid | Pinturas Florin</title>
+<meta name="description" content="Pintores profesionales en Madrid. Pintura de interiores, alisado de paredes, tarima y reformas. Presupuesto gratis por WhatsApp.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            color: #222;
-            background: #f7f7f7;
-        }
-
-        header {
-            background: linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.65)),
-                        url("https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=1600&q=80");
-            background-size: cover;
-            background-position: center;
-            color: white;
-            text-align: center;
-            padding: 90px 20px;
-        }
-
-        header h1 {
-            font-size: 46px;
-            margin: 0 0 15px;
-        }
-
-        header p {
-            font-size: 22px;
-            margin-bottom: 30px;
-        }
-
-        .btn {
-            display: inline-block;
-            background: #ff6600;
-            color: white;
-            padding: 16px 28px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        section {
-            padding: 55px 20px;
-            max-width: 1100px;
-            margin: auto;
-            text-align: center;
-        }
-
-        h2 {
-            font-size: 32px;
-            margin-bottom: 25px;
-        }
-
-        .services {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-            gap: 20px;
-        }
-
-        .card {
-            background: white;
-            padding: 30px 20px;
-            border-radius: 14px;
-            box-shadow: 0 4px 14px rgba(0,0,0,.08);
-        }
-
-        .card h3 {
-            color: #ff6600;
-        }
-
-        .about {
-            background: white;
-            border-radius: 14px;
-            padding: 35px;
-            box-shadow: 0 4px 14px rgba(0,0,0,.08);
-            line-height: 1.7;
-        }
-
-        .reviews {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 20px;
-        }
-
-        .review {
-            background: white;
-            padding: 25px;
-            border-radius: 14px;
-            box-shadow: 0 4px 14px rgba(0,0,0,.08);
-            font-style: italic;
-        }
-
-        .cta {
-            background: #222;
-            color: white;
-            max-width: none;
-        }
-
-        .cta h2 {
-            color: white;
-        }
-
-        .contact-box {
-            background: white;
-            color: #222;
-            max-width: 600px;
-            margin: 30px auto 0;
-            padding: 30px;
-            border-radius: 14px;
-        }
-
-        footer {
-            background: #111;
-            color: white;
-            text-align: center;
-            padding: 25px;
-        }
-
-        .whatsapp {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 65px;
-            height: 65px;
-            background: #25D366;
-            color: white;
-            border-radius: 50%;
-            text-align: center;
-            line-height: 65px;
-            font-size: 34px;
-            text-decoration: none;
-            box-shadow: 0 4px 12px rgba(0,0,0,.3);
-            z-index: 9999;
-        }
-
-        .whatsapp:hover {
-            transform: scale(1.1);
-        }
-
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 34px;
-            }
-
-            header p {
-                font-size: 18px;
-            }
-        }
-    </style>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;color:#222;background:#f6f6f6}
+header{position:relative;height:90vh;display:flex;align-items:center;justify-content:center;text-align:center;color:white;overflow:hidden}
+header video{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+header::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.62);z-index:-1}
+.hero h1{font-size:54px;margin:0 0 15px}
+.hero p{font-size:24px;margin-bottom:30px}
+.btn{display:inline-block;background:#ff6600;color:white;padding:15px 28px;border-radius:30px;text-decoration:none;font-weight:bold;margin:6px}
+.btn-dark{background:#222}
+section{padding:60px 20px;max-width:1150px;margin:auto;text-align:center}
+h2{font-size:34px;margin-bottom:30px}
+.services,.gallery,.reviews{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px}
+.card,.review{background:white;padding:28px;border-radius:16px;box-shadow:0 5px 18px rgba(0,0,0,.09)}
+.card h3{color:#ff6600}
+.gallery img{width:100%;height:230px;object-fit:cover;border-radius:16px;box-shadow:0 5px 18px rgba(0,0,0,.15);transition:.3s}
+.gallery img:hover{transform:scale(1.04)}
+.about{background:white;border-radius:16px;padding:35px;line-height:1.7;box-shadow:0 5px 18px rgba(0,0,0,.09)}
+.cta{background:#222;color:white;max-width:none}
+.contact-box{background:white;color:#222;max-width:650px;margin:30px auto 0;padding:30px;border-radius:16px}
+footer{background:#111;color:white;text-align:center;padding:25px}
+.whatsapp{position:fixed;bottom:22px;right:22px;width:65px;height:65px;background:#25D366;color:white;border-radius:50%;text-align:center;line-height:65px;font-size:35px;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,.35);z-index:9999}
+.call-fixed{position:fixed;bottom:22px;left:22px;background:#ff6600;color:white;padding:15px 20px;border-radius:30px;text-decoration:none;font-weight:bold;box-shadow:0 4px 14px rgba(0,0,0,.35);z-index:9999}
+@media(max-width:650px){
+.hero h1{font-size:36px}
+.hero p{font-size:18px}
+header{height:78vh}
+.call-fixed{font-size:14px;padding:13px 16px}
+}
+</style>
 </head>
 
 <body>
 
 <header>
-    <h1>Pinturas Florin</h1>
-    <p>Pintores profesionales en Madrid</p>
-    <a href="https://wa.me/34663185381?text=Hola,%20he%20visto%20tu%20web%20y%20quiero%20solicitar%20un%20presupuesto." class="btn">
-        Pedir presupuesto gratis
-    </a>
+<video autoplay muted loop playsinline>
+<source src="https://videos.pexels.com/video-files/6785728/6785728-hd_1920_1080_25fps.mp4" type="video/mp4">
+</video>
+
+<div class="hero">
+<h1>Pinturas Florin</h1>
+<p>Pintores profesionales en Madrid</p>
+<a href="https://wa.me/34663185381?text=Hola,%20he%20visto%20tu%20web%20y%20quiero%20solicitar%20un%20presupuesto." class="btn">Pedir presupuesto gratis</a>
+<a href="tel:663185381" class="btn btn-dark">Llamar ahora</a>
+</div>
 </header>
 
 <section>
-    <h2>Servicios de pintura</h2>
-
-    <div class="services">
-        <div class="card">
-            <h3>🎨 Pintura de interiores</h3>
-            <p>Pintamos viviendas, salones, habitaciones, oficinas y locales con acabados limpios y profesionales.</p>
-        </div>
-
-        <div class="card">
-            <h3>🧱 Alisado de paredes</h3>
-            <p>Eliminamos gotelé y dejamos las paredes preparadas para un acabado moderno y elegante.</p>
-        </div>
-
-        <div class="card">
-            <h3>🏠 Instalación de tarima</h3>
-            <p>Instalación de tarima y remates para renovar por completo el aspecto de tu vivienda.</p>
-        </div>
-    </div>
+<h2>Servicios profesionales</h2>
+<div class="services">
+<div class="card">
+<h3>🎨 Pintura de interiores</h3>
+<p>Pintamos viviendas, oficinas, locales, salones, dormitorios y comunidades con acabados limpios y profesionales.</p>
+</div>
+<div class="card">
+<h3>🧱 Alisado de paredes</h3>
+<p>Eliminación de gotelé, reparación de paredes y preparación completa antes de pintar.</p>
+</div>
+<div class="card">
+<h3>🏠 Tarima y acabados</h3>
+<p>Instalación de tarima, remates, rodapiés y renovación estética de viviendas.</p>
+</div>
+</div>
 </section>
 
 <section>
-    <h2>Sobre nosotros</h2>
-    <div class="about">
-        <p>
-            En <strong>Pinturas Florin</strong> ofrecemos servicios profesionales de pintura en Madrid.
-            Trabajamos con rapidez, limpieza y cuidado en cada detalle para conseguir acabados de calidad.
-        </p>
-        <p>
-            Realizamos presupuestos sin compromiso y asesoramos al cliente para elegir la mejor solución según su vivienda, local u oficina.
-        </p>
-    </div>
+<h2>Trabajos y acabados</h2>
+<div class="gallery">
+<img src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=900&q=80" alt="Pintor profesional pintando pared">
+<img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80" alt="Salón reformado y pintado">
+<img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=80" alt="Interior de vivienda pintada">
+<img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?auto=format&fit=crop&w=900&q=80" alt="Vivienda moderna con pintura interior">
+</div>
 </section>
 
 <section>
-    <h2>Opiniones de clientes</h2>
+<h2>Sobre nosotros</h2>
+<div class="about">
+<p><strong>Pinturas Florin</strong> ofrece servicios profesionales de pintura en Madrid, cuidando cada detalle desde la preparación hasta el acabado final.</p>
+<p>Trabajamos con limpieza, rapidez y seriedad. Realizamos presupuestos sin compromiso y asesoramos al cliente para elegir la mejor solución.</p>
+</div>
+</section>
 
-    <div class="reviews">
-        <div class="review">
-            ⭐⭐⭐⭐⭐<br><br>
-            “Muy profesionales, rápidos y limpios. El resultado quedó perfecto.”
-            <br><br><strong>— Cliente en Madrid</strong>
-        </div>
-
-        <div class="review">
-            ⭐⭐⭐⭐⭐<br><br>
-            “Buen precio y muy buen acabado. Repetiría sin duda.”
-            <br><br><strong>— Cliente satisfecho</strong>
-        </div>
-
-        <div class="review">
-            ⭐⭐⭐⭐⭐<br><br>
-            “Nos asesoraron muy bien y dejaron la casa impecable.”
-            <br><br><strong>— Trabajo de pintura interior</strong>
-        </div>
-    </div>
+<section>
+<h2>Opiniones de clientes</h2>
+<div class="reviews">
+<div class="review">⭐⭐⭐⭐⭐<br><br>“Muy profesionales, rápidos y limpios. El resultado quedó perfecto.”<br><br><strong>— Cliente en Madrid</strong></div>
+<div class="review">⭐⭐⭐⭐⭐<br><br>“Buen precio, buen trato y muy buen acabado.”<br><br><strong>— Cliente satisfecho</strong></div>
+<div class="review">⭐⭐⭐⭐⭐<br><br>“Nos dejaron la casa impecable. Muy recomendables.”<br><br><strong>— Trabajo de interior</strong></div>
+</div>
 </section>
 
 <section class="cta">
-    <h2>Solicita tu presupuesto gratis</h2>
-    <p>Contacta por teléfono, email o WhatsApp.</p>
+<h2>Solicita tu presupuesto gratis</h2>
+<p>Contacta por teléfono, email o WhatsApp.</p>
 
-    <div class="contact-box">
-        <p><strong>📞 Teléfono:</strong> 663 18 53 81</p>
-        <p><strong>📩 Email:</strong> pinturasmadridflorin@gmail.com</p>
-
-        <a href="tel:663185381" class="btn">Llamar ahora</a>
-        <br><br>
-        <a href="mailto:pinturasmadridflorin@gmail.com" class="btn">Enviar email</a>
-    </div>
+<div class="contact-box">
+<p><strong>📞 Teléfono:</strong> 663 18 53 81</p>
+<p><strong>📩 Email:</strong> pinturasmadridflorin@gmail.com</p>
+<a href="tel:663185381" class="btn">Llamar ahora</a>
+<a href="mailto:pinturasmadridflorin@gmail.com" class="btn btn-dark">Enviar email</a>
+</div>
 </section>
 
 <footer>
-    <p>© Pinturas Florin - Pintores profesionales en Madrid</p>
+<p>© Pinturas Florin - Pintores profesionales en Madrid</p>
 </footer>
 
+<a href="tel:663185381" class="call-fixed">📞 Llamar</a>
+
 <a href="https://wa.me/34663185381?text=Hola,%20he%20visto%20tu%20web%20y%20me%20gustaría%20solicitar%20un%20presupuesto."
-   class="whatsapp"
-   target="_blank"
-   aria-label="Contactar por WhatsApp">
-    💬
-</a>
+class="whatsapp" target="_blank" aria-label="Contactar por WhatsApp">💬</a>
 
 </body>
 </html>
